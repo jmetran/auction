@@ -1,0 +1,78 @@
+<h1>Sign Up</h1>
+<%= form_for @user do |f| %>
+  <%= render 'shared/error_messages', :container => @user %>
+
+  <div class="field">
+    <%= f.label :username %><br />
+    <%= f.text_field :username, :maxlength => 50 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password, :maxlength => 50 %>
+    <div id="iSM">
+	<ul class="weak">
+		<li id="iWeak">Weak</li>
+		<li id="iMedium">Medium</li>
+
+		<li id="iStrong">Strong</li>
+	</ul>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %>
+  </div>
+
+  <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name, :maxlength => 50 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name, :maxlength => 50 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email, :maxlength => 100 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email_confirmation %><br />
+    <%= f.text_field :email_confirmation %>
+  </div>
+
+  <div class="field">
+    <%= f.label :gender %><br />
+    <%= f.select :gender, %w[Male Female], {:prompt => 'Select Gender'} %>
+  </div>
+
+  <div class="field">
+    <%= f.label :birth_date %><br />
+    <%= f.select :month, User::MONTHS, :include_blank => "Month", :selected => @user.month %>
+    <%= f.select :day, User::DAYS, :include_blank => "Day", :selected => @user.day %>
+    <%= f.select :year, User::YEAR_RANGE, :include_blank => "Year", :selected => @user.year %>
+  </div>
+
+  <div class="field">
+    <%= f.label :user_type %><br />
+    <%= f.select :user_type, %w[Bidder Seller], {:prompt => 'Select User Type'} %>
+  </div>
+
+  <div class="field">
+    <%= f.label :terms_of_service %><br />
+    <%= f.check_box :terms_of_service %>
+    <%= label_tag "user[terms_of_service]", "", :class => "terms_of_service_error" %>
+
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<%= link_to "Checkout", @cart.paypal_url("http://localhost:3000/signup") %>
+

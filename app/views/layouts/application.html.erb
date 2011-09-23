@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Auction</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <%= stylesheet_link_tag :all %>
+    <%= csrf_meta_tag %>
+
+  </head>
+  <body>
+
+    <%= yield %>
+
+    <%= javascript_include_tag "jquery.min", "jquery.rails", "jquery.validate", "validator.messages", "validator/user.validate", "password_indicator" %>
+    <script type="text/javascript">
+      $().ready(function() {
+        $('input[name="user[password]"]').passwordStrength({targetDiv: '#iSM',classes : Array('weak','medium','strong')});
+      });
+    </script>
+  </body>
+</html>
