@@ -47,7 +47,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
-    mysql2 (0.2.13)
+    pg (0.11.0)
     polyglot (0.3.2)
     rack (1.2.4)
     rack-mount (0.6.14)
@@ -81,5 +81,5 @@ PLATFORMS
 
 DEPENDENCIES
   activemerchant
-  mysql2 (~> 0.2.6)
+  pg
   rails (= 3.0.9)
