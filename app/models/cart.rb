@@ -1,11 +1,12 @@
 class Cart
-  def paypal_url(return_url)
+  def paypal_url(return_url, notify_url)
     values = {
       :business => 'joshme_1316503791_biz@gmail.com',
       :cmd => '_cart',
       :upload => 1,
       :return => return_url,
-      :invoice => 2
+      :invoice => 10,
+      :notify_url => notify_url
     }
     #line_items.each_with_index do |item, index|
       values.merge!({
