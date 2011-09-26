@@ -4,7 +4,6 @@ gem 'rails', '3.0.9'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-gem 'thin'
 gem 'mysql2', '~> 0.2.6'
 gem 'activemerchant', :require => 'active_merchant'
 #gem 'client_side_validations'
