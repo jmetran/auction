@@ -6,7 +6,13 @@ gem 'rails', '3.0.9'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 #gem 'mysql2', '~> 0.2.6'
 gem 'activemerchant', :require => 'active_merchant'
-gem 'pg'
+
+group :production do
+  gem 'pg'
+end
+group :development, :test do
+  gem 'mysql2', '~> 0.2.6'
+end
 #gem 'client_side_validations'
 # Use unicorn as the web server
 # gem 'unicorn'
