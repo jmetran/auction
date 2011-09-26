@@ -5,7 +5,7 @@ class Cart
       :cmd => '_cart',
       :upload => 1,
       :return => return_url,
-      :invoice => 1
+      :invoice => 2
     }
     #line_items.each_with_index do |item, index|
       values.merge!({
