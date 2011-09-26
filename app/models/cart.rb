@@ -1,7 +1,7 @@
 class Cart
   def paypal_url(return_url)
     values = {
-      :business => 'seller_1316488112_biz@gmail.com',
+      :business => 'joshme_1316503791_biz@gmail.com',
       :cmd => '_cart',
       :upload => 1,
       :return => return_url,
